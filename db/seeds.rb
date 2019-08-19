@@ -5,4 +5,43 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Car.create(brand: "BMW", model: "X3", year: 2006, price: 10000, description: "Very cool car", available: true, photo:"https://media.whatcar.com/662x440/wc-image/bmw-x340i-aa.jpg", address: "Muamera Omerbegovica 3", city: "Sarajevo", latitude: 2.6432, longitude: 0.3152)
+puts "Destroying all"
+Car.destroy_all
+User.destroy_all
+
+
+Sam = User.create(email: "sam@gmail.com",
+                  password: "123456")
+
+Ben = User.create(email: "ben@gmail.com",
+                  password: "123456")
+
+Car.create(brand: "BMW",
+           model: "X3",
+           year: 2006,
+           price: 80,
+           description: "Very cool car",
+           available: true,
+           photo:"https://media.whatcar.com/662x440/wc-image/bmw-x340i-aa.jpg",
+           address: "Muamera Omerbegovica 3",
+           city: "Sarajevo",
+           latitude: 2.6432,
+           longitude: 0.3152,
+           user: User.first
+           )
+
+Car.create(brand: "Audi",
+           model: "A4",
+           year: 2004,
+           price: 50,
+           description: "Very cheap car",
+           available: true,
+           photo:"https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/audi-a4-rt-2015-0024_0.jpg?itok=4Mp5c5H7",
+           address: "Liverpool str",
+           city: "London",
+           latitude: 0.6432,
+           longitude: 0.3252,
+           user: User.second
+           )
+
+puts "Created new seed!"

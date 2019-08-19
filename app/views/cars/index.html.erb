@@ -1,1 +1,20 @@
-<h1>Hello</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <h1>Hello</h1>
+      <% @cars.each do |car| %>
+      <ul>
+        <li><%= car.brand %></li>
+        <li><%= car.model %></li>
+        <li><%= car.year %></li>
+        <li><%= car.price %></li>
+        <li><%= car.description %></li>
+        <li><%= car.photo %></li>
+        <li><%= car.address %></li>
+        <li><%= car.city%></li>
+      </ul>
+      <% end %>
+    </div>
+  </div>
+</div>
+
