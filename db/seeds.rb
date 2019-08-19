@@ -25,8 +25,6 @@ Car.create(brand: "BMW",
            photo:"https://media.whatcar.com/662x440/wc-image/bmw-x340i-aa.jpg",
            address: "Muamera Omerbegovica 3",
            city: "Sarajevo",
-           latitude: 2.6432,
-           longitude: 0.3152,
            user: User.first
            )
 
@@ -39,8 +37,6 @@ Car.create(brand: "Audi",
            photo:"https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/audi-a4-rt-2015-0024_0.jpg?itok=4Mp5c5H7",
            address: "Liverpool str",
            city: "London",
-           latitude: 0.6432,
-           longitude: 0.3252,
            user: User.second
            )
 
