@@ -2,6 +2,7 @@
   <div class="row" style="width:100%">
     <% @cars.each do |car| %>
       <div class="col-sm-3">
+        <h2>Title: <%= link_to car.title, car_path(car) %</h2>
         <%= car.brand %>
         <%= car.model %>
         <div class="card-category">
@@ -14,6 +15,4 @@
     <% end %>
   </div>
 </div>
-
 <h1><%= link_to "Add a new car", new_car_path %></h1>
-

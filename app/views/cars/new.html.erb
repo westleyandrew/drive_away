@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 offset-sm-4">
+      <%= simple_form_for @car do |f| %>
+        <%= f.input :title %>
+        <%= f.input :brand %>
+        <%= f.input :model %>
+        <%= f.input :year %>
+        <%= f.input :price %>
+        <%= f.input :description %>
+        <%= f.input :available %>
+        <%= f.input :photo %>
+        <%= f.input :address %>
+        <%= f.input :city %>
+        <%= f.button :submit %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
