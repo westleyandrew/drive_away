@@ -1,20 +1,19 @@
 <div class="container">
-  <div class="row">
-    <div class="col-sm-6">
-      <h1>Hello</h1>
-      <% @cars.each do |car| %>
-      <ul>
-        <li><%= car.brand %></li>
-        <li><%= car.model %></li>
-        <li><%= car.year %></li>
-        <li><%= car.price %></li>
-        <li><%= car.description %></li>
-        <li><%= car.photo %></li>
-        <li><%= car.address %></li>
-        <li><%= car.city%></li>
-      </ul>
-      <% end %>
-    </div>
+  <div class="row" style="width:100%">
+    <% @cars.each do |car| %>
+      <div class="col-sm-3">
+        <%= car.brand %>
+        <%= car.model %>
+        <div class="card-category">
+          <img class="card-image" src="<%= car.photo %>" alt="">
+        </div>
+        <%= car.city%>
+        <br>
+        <%= car.price %>
+      </div>
+    <% end %>
   </div>
 </div>
+
+<h1><%= link_to "Add a new car", new_car_path %></h1>
 
