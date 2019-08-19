@@ -10,10 +10,13 @@ Car.destroy_all
 User.destroy_all
 
 
-Sam = User.create(email: "sam@gmail.com",
+sam = User.create(email: "sam@gmail.com",
                   password: "123456")
 
-Ben = User.create(email: "ben@gmail.com",
+ben = User.create(email: "ben@gmail.com",
+                  password: "123456")
+
+wes = User.create(email: "wes@gmail.com",
                   password: "123456")
 
 Car.create(title: "Lovely BMW",
