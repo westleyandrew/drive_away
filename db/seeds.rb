@@ -16,7 +16,8 @@ Sam = User.create(email: "sam@gmail.com",
 Ben = User.create(email: "ben@gmail.com",
                   password: "123456")
 
-Car.create(brand: "BMW",
+Car.create(title: "Lovely BMW",
+           brand: "BMW",
            model: "X3",
            year: 2006,
            price: 80,
@@ -28,7 +29,8 @@ Car.create(brand: "BMW",
            user: User.first
            )
 
-Car.create(brand: "Audi",
+Car.create(title: "Lovely Audi",
+           brand: "Audi",
            model: "A4",
            year: 2004,
            price: 50,
