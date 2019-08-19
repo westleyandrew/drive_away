@@ -4,6 +4,7 @@
       <h1>Hello</h1>
       <% @cars.each do |car| %>
       <ul>
+        <li><%= link_to car.brand, car_path(car) %></li>
         <li><%= car.brand %></li>
         <li><%= car.model %></li>
         <li><%= car.year %></li>
@@ -17,4 +18,4 @@
     </div>
   </div>
 </div>
-
+<h1><%= link_to "Add a new car", new_car_path %></h1>
