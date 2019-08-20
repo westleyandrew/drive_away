@@ -3,6 +3,8 @@ class ReviewsController < ApplicationController
     # we need @restaurant in our `simple_form_for`
     @car = Car.find(params[:car_id])
     @review = Review.new
+    authorize @review
+
   end
 
   def create
@@ -10,6 +12,7 @@ class ReviewsController < ApplicationController
     # we need `restaurant_id` to associate review with corresponding restaurant
     @car = Car.find(params[:car_id])
     @review.car = @car
+    authorize @review
     if @review.save
       redirect_to car_path(@car)
     else

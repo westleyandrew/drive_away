@@ -7,10 +7,12 @@ class BookingsController < ApplicationController
   end
 
   def show
+    authorize @booking
   end
 
   def new
     @booking = Booking.new
+    authorize @booking
     @car = Car.find(params[:car_id])
   end
 
@@ -24,12 +26,14 @@ class BookingsController < ApplicationController
     else
       render :new
     end
+    authorize @booking
   end
 
   def destroy
     @car = @booking.car
     @booking.destroy
     redirect_to car_path(@car)
+    authorize @booking
   end
 
   private
