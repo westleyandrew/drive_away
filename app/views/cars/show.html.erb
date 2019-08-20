@@ -10,6 +10,7 @@
   <li><%= @car.city%></li>
 </ul>
 
+<p><%= link_to "Book this car", new_car_booking_path(@car) %></p>
 <p><%= link_to "Edit your car", edit_car_path %></p>
 <p><%= link_to "Delete car", car_path(@car),
   method: :delete,
