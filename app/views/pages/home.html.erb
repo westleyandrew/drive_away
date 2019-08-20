@@ -1,15 +1,18 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path 'M4.jpg' %>');">
-  <div class="banner-content">
-    <input type="text" placeholder="Location...">
-    <i class="ico-search mr-1 inline-block md:mr-1 xs:mr-0"></i>
-    <button type="button" name="button" class="search-btn btn-green text-center w-1/5 rounded-r-full lg:pl-0 lg:pr-1">Search</button>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://www.mldavisinsurance.com/wp-content/uploads/2015/08/Classic-Car.jpg);">
+  <div class="container">
+    <h1><strong>Book it and drive it!</strong></h1>
+    <div class="banner-content">
+      <input type="text" placeholder="Location...">
+      <i class="ico-search mr-1 inline-block md:mr-1 xs:mr-0"></i>
+      <button type="button" name="button" class="search-btn btn-green text-center w-1/5 rounded-r-full lg:pl-0 lg:pr-1">Search</button>
+    </div>
   </div>
 </div>
+
 <div class="container">
   <div class="row" style="width:100%">
     <% @cars.each do |car| %>
       <div class="col-sm-3">
-        <h2>Title: <%= link_to car.title, car_path(car) %></h2>
         <%= car.brand %>
         <%= car.model %>
         <div class="card-category">
