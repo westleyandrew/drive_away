@@ -10,10 +10,13 @@
   <li><%= @car.city%></li>
 </ul>
 
+<% if policy(@car).edit? %>
 <p><%= link_to "Edit your car", edit_car_path %></p>
+<% end %>
+<% if policy(@car).destroy? %>
 <p><%= link_to "Delete car", car_path(@car),
   method: :delete,
   data: { confirm: "Are you sure?" } %></p>
-
+<% end %>
 
 <p><%= link_to "Back to car list", cars_path %></p>

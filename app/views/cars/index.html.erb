@@ -15,4 +15,7 @@
     <% end %>
   </div>
 </div>
+
+<% if policy(Car).new? %>
 <h1><%= link_to "Add a new car", new_car_path %></h1>
+<% end %>
