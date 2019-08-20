@@ -10,6 +10,29 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
+    <header class="header" style="background: #E20074;">
+      <div class="my-navbar">
+        <div class="topnav">
+          <div class="dummy">
+          </div>
+          <div class="name">
+             <h1 style="font-size: 60px; margin-bottom: 10px;line-height: 62px; color: #ffffff;">Drive Away</h1>
+          </div>
+          <div class="links">
+            <%= link_to "Sign In", user_session_path %>
+            <%= link_to "Sign Up", new_user_registration_path %>
+          </div>
+        </div>
+        <div class="bottomnav">
+          <div class="slogan">
+
+          </div>
+          <div class="links">
+
+          </div>
+        </div>
+      </div>
+    </header>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
