@@ -8,7 +8,6 @@ class Car < ApplicationRecord
   validates :year, presence: true
   validates :price, presence: true
   validates :description, presence: true
-  validates :car, presence: true
   validates :photo, presence: true
   validates :address, presence: true
   validates :city, presence: true
