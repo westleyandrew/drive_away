@@ -10,6 +10,8 @@
   <li><%= @car.city%></li>
 </ul>
 
+<p><%= link_to "Book this car", new_car_booking_path(@car) %></p>
+
 <% if policy(@car).edit? %>
 <p><%= link_to "Edit your car", edit_car_path %></p>
 <% end %>
@@ -21,3 +23,15 @@
 
 <p><%= link_to "Book this car", new_car_booking_path(@car) %></p>
 <p><%= link_to "Back to car list", cars_path %></p>
+
+<p>Reviews for this car</p>
+<ul>
+  <% @car.reviews.each do |review| %>
+
+    <li><%= review.content %> Rating: <%= review.rating %> </li>
+
+  <% end %>
+</ul>
+
+<p><%= link_to "Add a review", new_car_review_path(@car) %></p>
+
