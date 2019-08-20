@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 offset-sm-4">
+      <%= simple_form_for [@car, @booking] do |f| %>
+        <%= f.input :booking_start_date %>
+        <%= f.input :booking_end_date %>
+        <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
+</div>

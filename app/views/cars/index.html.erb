@@ -17,5 +17,6 @@
 </div>
 
 <% if policy(Car).new? %>
-<h1><%= link_to "Add a new car", new_car_path %></h1>
+<h1><%= link_to "List a new car", new_car_path, class: "btn btn-primary btn-lg" %></h1>
 <% end %>
+
