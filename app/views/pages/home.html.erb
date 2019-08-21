@@ -1,6 +1,7 @@
 <div>
-    <video id="myvideo" preload="auto|metadata|none" autoplay loop src="https://www.tesla.com/ns_videos/hp_2019/experience-hero-desktop.mp4">
-    </video>
+    <!-- <video id="myvideo" preload="auto|metadata|none" autoplay loop src="https://www.tesla.com/ns_videos/hp_2019/experience-hero-desktop.mp4">
+    </video> -->
+    <%= video_tag("video.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, id: "myvideo" ) %>
 
     <div class="img1">
         <img src="Images/logo.svg" alt="" id="logo">
@@ -8,10 +9,7 @@
 
     <nav>
       <span class="nav">
-          <%= link_to "PAGE 1", new_user_session_path %>
-          <%= link_to "PAGE 2", new_user_registration_path %>
-          <%= link_to "PAGE 3", new_user_session_path %>
-          <%= link_to "PAGE 4", new_user_registration_path %>
+          <%= link_to "CARS", cars_path %>
         <span class="nav-right">
         <%= link_to "SIGN IN", new_user_session_path %>
         <%= link_to "SIGN UP", new_user_registration_path %>
