@@ -29,7 +29,7 @@ car = Car.new(title: "Lovely BMW",
            price: 80,
            description: "Very cool car",
            available: true,
-           address: "Muamera Omerbegovica 3",
+           address: "19 Henryson Road, London, SE4 1HL",
            city: "Sarajevo",
            user: User.first
            )
@@ -44,7 +44,7 @@ car = Car.new(title: "Cool Mercedes",
            price: 300,
            description: "Very cool car in grey",
            available: true,
-           address: "Number 6, Stone Place",
+           address: "10 Downing Street, London",
            city: "Balamory",
            user: User.second
            )
@@ -59,7 +59,7 @@ car = Car.new(title: "Bright Yellow Ferrari",
            price: 1000,
            description: "Fast motor",
            available: true,
-           address: "9 Curtain Road)",
+           address: "Heathrow Airport, Longford TW6",
            city: "Southport",
            user: User.third
            )
@@ -74,7 +74,7 @@ car = Car.new(title: "Sporty Nissan Micra",
            price: 80,
            description: "Convenient runabout",
            available: true,
-           address: "Muamera Omerbegovica 3",
+           address: "Knole Park, Sevenoaks",
            city: "Sarajevo",
            user: User.first
            )
@@ -89,7 +89,7 @@ car = Car.new(title: "Dacia Sandero in good nick",
            price: 10,
            description: "Not very cool but cheap",
            available: true,
-           address: "Muamera Omerbegovica 3",
+           address: "Highgate Cemetery, London",
            city: "Sarajevo",
            user: User.second
            )
@@ -104,7 +104,7 @@ car = Car.new(title: "Really quick Aston Martin",
            price: 10,
            description: "Not very cool but cheap",
            available: true,
-           address: "Paris",
+           address: "Roehyde Way, Hatfield AL10 9AF",
            city: "France",
            user: User.second
            )
@@ -119,7 +119,7 @@ car = Car.new(title: "Dependable Volvo",
            price: 10,
            description: "Chunky",
            available: true,
-           address: "60 Henryson Road",
+           address: "16 High St, Cookham, Maidenhead SL6 9SJ",
            city: "London",
            user: User.second
            )
@@ -134,7 +134,7 @@ car = Car.new(title: "VW Polo - nice and clean",
            price: 10,
            description: "Bargain",
            available: true,
-           address: "3 Clifton Road",
+           address: "Wembley Stadium, London, HA9 0WS",
            city: "Brighton",
            user: User.third
            )
