@@ -1,5 +1,5 @@
 <ul>
-  <li><%= @car.title %></li>
+  <li><h1><%= @car.title %></h1></li>
   <li><%= @car.brand %></li>
   <li><%= @car.model %></li>
   <li><%= @car.year %></li>
@@ -7,10 +7,7 @@
   <li><%= @car.description %></li>
   <li><%= cl_image_tag @car.photo, height: 300, width: 400, crop: :fill %></li>
   <li><%= @car.address %></li>
-  <li><%= @car.city%></li>
 </ul>
-
-<p><%= link_to "Book this car", new_car_booking_path(@car) %></p>
 
 <% if policy(@car).edit? %>
 <p><%= link_to "Edit your car", edit_car_path %></p>
@@ -22,9 +19,10 @@
 <% end %>
 
 <p><%= link_to "Book this car", new_car_booking_path(@car) %></p>
+<h1>Need to add a list of bookings here!!!!!</h1>
 <p><%= link_to "Back to car list", cars_path %></p>
 
-<p>Reviews for this car</p>
+<h1>Reviews for this car</h1>
 <ul>
   <% @car.reviews.each do |review| %>
 
