@@ -1,29 +1,26 @@
-<div class="container">
-  <div class="row" style="width:100%">
+<div class= "my-css">
+  <div class="row my-row">
     <% @cars.each do |car| %>
-      <div class="col-sm-3">
-        <h2><%= link_to car.title, car_path(car) %></h2>
-        <%= car.brand %>
-        <%= car.model %>
-        <div class="card-category">
-          <img class="card-image" src="<%= car.photo %>" alt="">
+      <div class="col-md-12">
+          <div class="card-product cards">
+            <img class="card-image" src="<%= car.photo %>" alt="">
+              <div class="card-product-infos cards">
+                <h5><%= link_to car.title, car_path(car) %></h5>
+                <%= car.brand %>
+                <%= car.model %>
+              <div><%= car.address%></div>
+            <div><%= car.price %></div>
+          </div>
         </div>
-        <%= car.address%>
-        <br>
-        <%= car.price %>
       </div>
     <% end %>
   </div>
+
+  <div class="row my-row">
+    <div
+    id="map"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
 </div>
-
-<% if policy(Car).new? %>
-<h1><%= link_to "List a new car", new_car_path, class: "btn btn-primary btn-lg" %></h1>
-<% end %>
-
-<div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>

@@ -1,7 +1,7 @@
 class Car < ApplicationRecord
   mount_uploader :photo, PhotoUploader
   belongs_to :user
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   has_many :reviews
   validates :title, presence: true
   validates :model, presence: true
