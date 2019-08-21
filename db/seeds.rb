@@ -30,7 +30,6 @@ car = Car.new(title: "Lovely BMW",
            description: "Very cool car",
            available: true,
            address: "19 Henryson Road, London, SE4 1HL",
-           city: "Sarajevo",
            user: User.first
            )
 car.remote_photo_url = url
@@ -45,7 +44,6 @@ car = Car.new(title: "Cool Mercedes",
            description: "Very cool car in grey",
            available: true,
            address: "10 Downing Street, London",
-           city: "Balamory",
            user: User.second
            )
 car.remote_photo_url = url
@@ -59,8 +57,7 @@ car = Car.new(title: "Bright Yellow Ferrari",
            price: 1000,
            description: "Fast motor",
            available: true,
-           address: "Heathrow Airport, Longford TW6",
-           city: "Southport",
+           address: "Peckham Rye Lane, Peckham",
            user: User.third
            )
 car.remote_photo_url = url
@@ -75,7 +72,6 @@ car = Car.new(title: "Sporty Nissan Micra",
            description: "Convenient runabout",
            available: true,
            address: "Knole Park, Sevenoaks",
-           city: "Sarajevo",
            user: User.first
            )
 car.remote_photo_url = url
@@ -90,7 +86,6 @@ car = Car.new(title: "Dacia Sandero in good nick",
            description: "Not very cool but cheap",
            available: true,
            address: "Highgate Cemetery, London",
-           city: "Sarajevo",
            user: User.second
            )
 car.remote_photo_url = url
@@ -105,7 +100,6 @@ car = Car.new(title: "Really quick Aston Martin",
            description: "Not very cool but cheap",
            available: true,
            address: "Roehyde Way, Hatfield AL10 9AF",
-           city: "France",
            user: User.second
            )
 car.remote_photo_url = url
@@ -120,7 +114,6 @@ car = Car.new(title: "Dependable Volvo",
            description: "Chunky",
            available: true,
            address: "16 High St, Cookham, Maidenhead SL6 9SJ",
-           city: "London",
            user: User.second
            )
 car.remote_photo_url = url
@@ -135,7 +128,6 @@ car = Car.new(title: "VW Polo - nice and clean",
            description: "Bargain",
            available: true,
            address: "Wembley Stadium, London, HA9 0WS",
-           city: "Brighton",
            user: User.third
            )
 car.remote_photo_url = url
