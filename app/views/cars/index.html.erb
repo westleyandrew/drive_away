@@ -1,34 +1,20 @@
-<div>
-    <video id="myvideo" preload="auto|metadata|none" autoplay loop src="https://www.tesla.com/ns_videos/hp_2019/experience-hero-desktop.mp4">
-    </video>
-
-    <div class="img1">
-        <img src="Images/logo.svg" alt="" id="logo">
-    </div>
-
-    <nav>
-      <span class="nav">
-          <a href="">PAGE 1</a>
-          <a href="">PAGE 2</a>
-          <a href="">PAGE 3</a>
-          <a href="">PAGE 3</a>
-        <span class="nav-right">
-            <a href="">SIGN IN</a>
-            <a href="">SIGN UP</a>&nbsp;&nbsp;&nbsp;
-        </span>
-    </nav>
-
-
-    <section class="heading">
-      <center> Quickest Acceleration.<br>
-            Longest Range. The Safest Cars</center>
-        <div class="search">
-          <button>Search</button>
-          <input type="search" name="">
+<div class="container">
+  <div class="row" style="width:100%">
+    <% @cars.each do |car| %>
+      <div class="col-sm-3">
+        <%= car.brand %>
+        <%= car.model %>
+        <div class="card-category">
+          <img class="card-image" src="<%= car.photo %>" alt="">
         </div>
-    </section>
+        <%= car.city%>
+        <br>
+        <%= car.price %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
-    <div class="section-footer ">
-        <center> <a href="">GET THE NEWSLETTER▸</a> </center>
-    </div>
-<div>
+<% if policy(Car).new? %>
+<h1><%= link_to "List a new car", new_car_path, class: "btn btn-primary btn-lg" %></h1>
+<% end %>

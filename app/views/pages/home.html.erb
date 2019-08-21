@@ -1,28 +1,49 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://www.mldavisinsurance.com/wp-content/uploads/2015/08/Classic-Car.jpg);">
-  <div class="container">
-    <h1><strong>Book it and drive it!</strong></h1>
-    <div class="banner-content">
-      <input type="text" placeholder="Location...">
-      <i class="ico-search mr-1 inline-block md:mr-1 xs:mr-0"></i>
-      <button type="button" name="button" class="search-btn btn-green text-center w-1/5 rounded-r-full lg:pl-0 lg:pr-1">Search</button>
-    </div>
-  </div>
-</div>
+<div>
+    <video id="myvideo" preload="auto|metadata|none" autoplay loop src="https://www.tesla.com/ns_videos/hp_2019/experience-hero-desktop.mp4">
+    </video>
 
-<div class="container">
-  <div class="row" style="width:100%">
-    <% @cars.each do |car| %>
-      <div class="col-sm-3">
-        <%= car.brand %>
-        <%= car.model %>
-        <div class="card-category">
-          <img class="card-image" src="<%= car.photo %>" alt="">
+    <div class="img1">
+        <img src="Images/logo.svg" alt="" id="logo">
+    </div>
+
+    <nav>
+      <span class="nav">
+          <%= link_to "PAGE 1", new_user_session_path %>
+          <%= link_to "PAGE 2", new_user_registration_path %>
+          <%= link_to "PAGE 3", new_user_session_path %>
+          <%= link_to "PAGE 4", new_user_registration_path %>
+        <span class="nav-right">
+        <%= link_to "SIGN IN", new_user_session_path %>
+        <%= link_to "SIGN UP", new_user_registration_path %>
+        </span>
+    </nav>
+
+
+    <section class="heading">
+      <center> Quickest Booking.<br>
+            Longest Range. The Safest Cars</center>
+        <div class="search">
+          <button>Search</button>
+          <input type="search" name="">
         </div>
-        <%= car.city%>
-        <br>
-        <%= car.price %>
-      </div>
-    <% end %>
-  </div>
-</div>
-<h1><%= link_to "List a new car", new_car_path, class: "btn btn-primary btn-lg" %></h1>
+    </section>
+
+    <div class="section-footer">
+        <center class= "footer-cards">
+            <div class="number-of-models">
+              <p class="number-home"> 3</p>
+              <p class="name-home"> Owneres </p>
+            </div>
+            <div class="number-of-models">
+              <p class="number-home"> 0 </p>
+              <p class="name-home"> Lenders  </p>
+            </div>
+            <div class="number-of-models">
+              <p class="number-home"> 3 </p>
+              <p class="name-home"> Happines </p>
+            </div>
+          </div>
+        </center>
+    </div>
+
+
