@@ -1,21 +1,22 @@
 <div class="container">
 <div class="car-container-top">
   <div>
-    <p><%= link_to "< Back to car list", cars_path %></p>
-    <h2 class="text-inline"><%= @car.title %></h2>
+    <%= link_to "< Back to car list", cars_path,class: "links_text_pages" %></p>
+    <h2 class="text-inline h1_text_pages"><%= @car.title %></h2>
     <span><%= @car.average_rating %></span>
     <p><% if policy(@car).edit? %>
-    <%= link_to "Edit", edit_car_path %>
+    <%= link_to "Edit", edit_car_path, class: "links_text_pages" %>
     <% end %>
     <% if policy(@car).destroy? %> |
-    <%= link_to "Delete", car_path(@car),
+    <%= link_to "Delete", car_path(@car), class: "links_text_pages",
       method: :delete,
       data: { confirm: "Are you sure?" } %>
     <% end %></p>
     <%= cl_image_tag @car.photo, height: 500, width: 550, crop: :fill %>
   </div>
   <div class="car-container-booking">
-    <%= link_to "Book this car", new_car_booking_path(@car),class: "btn btn-gradient" %>
+    <%= link_to "Book this car", new_car_booking_path(@car),class: "purple-button" %>
+    <p></p>
     <h2><%= @car.price %> £ / day</h2>
 
     <div class="container">
@@ -28,7 +29,7 @@
 
               <% bookings.each do |bookings| %>
                 <div>
-                  <%= @car.title %>
+                  <% @car.title %>
                 </div>
               <% end %>
             <% end %>
@@ -47,10 +48,10 @@
 
   <div class="middle-container">
     <div>
-      <p><%= @car.brand %></p>
-      <p><%= @car.model %></p>
-      <p><%= @car.year %></p>
-      <p><%= @car.address %></p>
+      <p class="links_text_pages_p"><%= @car.brand %></p>
+      <p class="links_text_pages_p"><%= @car.model %></p>
+      <p class="links_text_pages_p"><%= @car.year %></p>
+      <p class="links_text_pages_p"><%= @car.address %></p>
     </div>
     <div class="description-container">
       <%= @car.description %>
@@ -58,14 +59,14 @@
   </div>
 
   <div class="bottom-container">
-    <p><%= link_to "Add a review", new_car_review_path(@car) %></p>
+    <p><%= link_to "Add a review", new_car_review_path(@car), class: "links_text_pages" %></p>
   </div>
 
 </div>
 
 
   <div class="container container-bottom">
-    <h2>Reviews & Comments</h2>
+    <h2 class ="h1_text_pages">Reviews & Comments</h2>
       <% @car.reviews.each do |review| %>
         <div class="review-container">
           <div class="review-rating">
