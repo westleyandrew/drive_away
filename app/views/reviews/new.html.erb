@@ -4,7 +4,7 @@
 
       <h1>Add a review</h1>
 
-      <%= simple_form_for [@car, @review] do |f| %>
+      <%= simple_form_for [@car, @review], remote: true do |f| %>
         <%= f.input :content %>
         <p>Rating</p>
         <%= f.select :rating, [['Fabulous', 5],['Pretty neat', 4],['Definition of average', 3],['Poor (sad face)', 2],['Appalling',1,]] %>

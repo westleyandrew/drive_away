@@ -4,7 +4,6 @@ class ReviewsController < ApplicationController
     @car = Car.find(params[:car_id])
     @review = Review.new
     authorize @review
-
   end
 
   def create
@@ -14,9 +13,15 @@ class ReviewsController < ApplicationController
     @review.car = @car
     authorize @review
     if @review.save
-      redirect_to car_path(@car)
+      respond_to do |format|
+        format.html { redirect_to restaurant_path(@restaurant) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html { render 'restaurants/show' }
+        format.js  # <-- idem
+      end
     end
   end
 

@@ -20,6 +20,7 @@ class CarsController < ApplicationController
   def show
     @bookings = Booking.find_by(:car_id == params[:id])
     authorize @car
+    @review = Review.new
   end
 
   def edit
