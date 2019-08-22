@@ -1,11 +1,74 @@
-.addstyle {
+.car-container-top {
+  display: flex;
+  padding: 24px 0;
+}
+
+.car-container-booking {
   text-align: center;
 }
 
-.fontf {
-  font-family: "Open Sans", "Helvetica", "sans-serif";
-  color: #353946;
+.middle-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 27px 0;
+  position: relative;
 }
+
+.description-container {
+  margin: auto 0;
+}
+
+.text-inline {
+  display: inline-block;
+}
+
+.btn-gradient {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: linear-gradient(#167FFB, #0F60C4);
+  transition: background 0.3s ease;
+  border: 1px solid #0F60C4;
+  margin-bottom: 24px;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(#147EFF, #0F67DA);
+  color: black;
+}
+
+.container-bottom {
+
+}
+
+.review-container {
+  display: flex;
+  background-color: #E8E8E8;
+  margin-bottom: 24px;
+}
+
+.review-rating {
+  font-size: 50px;
+  font-weight: bold;
+  padding: 24px;
+  color: #8361C3;
+}
+
+.review-content {
+  margin: auto 0;
+  padding: 24px;
+}
+
+
+// .addstyle {
+//   text-align: center;
+// }
+
+// .fontf {
+//   font-family: "Trebuchet MS", Verdana, sans-serif;
+//   color: #353946;
+// }
 
 
 .card-image {
