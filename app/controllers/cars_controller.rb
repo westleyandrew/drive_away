@@ -19,6 +19,7 @@ class CarsController < ApplicationController
 
   def show
     authorize @car
+    @review = Review.new
   end
 
   def edit

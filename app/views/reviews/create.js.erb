@@ -1,0 +1,11 @@
+
+  var newReview = "<li><h2><%= j @review.content %> Rating: <%= @review.rating%></h2></li>"
+  var reviews = document.querySelector('.reviews-list')
+  reviews.insertAdjacentHTML('beforeend', newReview)
+
+  var inputBox = document.getElementById('review_content')
+  inputBox.value = '';
+
+  var inputBox = document.getElementById('review_rating')
+  inputBox.value = '';
+

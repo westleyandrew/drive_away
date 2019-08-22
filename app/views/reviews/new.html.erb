@@ -4,7 +4,7 @@
 
       <h1>Add a review</h1>
 
-      <%= simple_form_for [@car, @review] do |f| %>
+      <%= simple_form_for [@car, @review], remote: true do |f| %>
         <%= f.input :content %>
         <%= f.input :rating, as: :integer %>
         <%= f.submit "Add a review" %>
