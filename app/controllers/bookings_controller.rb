@@ -41,7 +41,7 @@ class BookingsController < ApplicationController
   def booking_params
     # *Strong params*: You need to *whitelist* what can be updated by the user
     # Never trust user data!
-    params.require(:booking).permit(:booking_start_date, :booking_end_date, :user_id, :car_id)
+    params.require(:booking).permit(:start_time, :end_time, :user_id, :car_id)
   end
 
   def set_booking
