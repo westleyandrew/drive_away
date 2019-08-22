@@ -1,16 +1,16 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-4 offset-sm-4">
+    <div class="col-sm-4 offset-sm-4 h1_text_pages">
 
       <h1>Add a review</h1>
 
       <%= simple_form_for [@car, @review] do |f| %>
         <%= f.input :content %>
-        <%= f.input :rating, as: :integer %>
-        <%= f.submit "Add a review" %>
+        <p>Rating</p>
+        <%= f.select :rating, [['Fabulous', 5],['Pretty neat', 4],['Definition of average', 3],['Poor (sad face)', 2],['Appalling',1,]] %>
+        <p></p>
+        <%= f.submit "Leave your review" %>
       <% end %>
-
-      <p><%= link_to @car.title, car_path(@car) %></p>
 
     </div>
   </div>
