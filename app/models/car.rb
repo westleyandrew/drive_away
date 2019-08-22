@@ -18,4 +18,14 @@ class Car < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+
+  def average_rating
+    return nil if reviews.empty?
+    total_rating = 0
+    reviews.each do |review|
+      total_rating += review.rating
+    end
+    average_rating = total_rating.to_f / reviews.count
+    average_rating.round(2)
+  end
 end

@@ -1,29 +1,27 @@
-<div class="addstyle">
-  <ul class="fontf">
-    <li class="title-color"><h1><%= @car.title %></h1></li>
-    <li><h3><%= @car.brand %><h3></li>
-    <li><h3><%= @car.model %><h3></li>
-    <li><%= @car.year %></li>
-    <li><%= @car.price %></li>
-    <li><%= @car.description %></li>
-    <li><%= cl_image_tag @car.photo, height: 300, width: 400, crop: :fill %></li>
-    <li><%= @car.address %></li>
-  </ul>
+<div class="container">
+<div class="car-container-top">
+  <div>
+    <p><%= link_to "< Back to car list", cars_path %></p>
+    <h2 class="text-inline"><%= @car.title %></h2>
+    <span><%= @car.average_rating %></span>
+    <p><% if policy(@car).edit? %>
+    <%= link_to "Edit", edit_car_path %>
+    <% end %>
+    <% if policy(@car).destroy? %> |
+    <%= link_to "Delete", car_path(@car),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+    <% end %></p>
+    <%= cl_image_tag @car.photo, height: 500, width: 550, crop: :fill %>
+  </div>
+  <div class="car-container-booking">
+    <%= link_to "Book this car", new_car_booking_path(@car),class: "btn btn-gradient" %>
+    <h2><%= @car.price %> £ / day</h2>
 
-  <% if policy(@car).edit? %>
-  <p><%= link_to "Edit your car", edit_car_path %></p>
-  <% end %>
-  <% if policy(@car).destroy? %>
-  <p><%= link_to "Delete car", car_path(@car),
-    method: :delete,
-    data: { confirm: "Are you sure?" } %></p>
-  <% end %>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 offset-sm-2">
 
-  <p><%= link_to "Book this car", new_car_booking_path(@car) %></p>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-8 offset-sm-2">
           <% if !@bookings.nil? %>
             <%= month_calendar events: [@bookings] do |date, bookings| %>
               <%= date.to_formatted_s(:short) %>
@@ -34,25 +32,50 @@
                 </div>
               <% end %>
             <% end %>
-           <% else %>
-             <%= month_calendar do |date| %>
-             <%= date.to_formatted_s(:short) %>
-        <% end %>
-     <% end %>
+
+          <% else %>
+            <%= month_calendar do |date| %>
+              <%= date.to_formatted_s(:short) %>
+            <% end %>
+          <% end %>
+
+        </div>
       </div>
     </div>
   </div>
-
-  <p><%= link_to "Back to car list", cars_path %></p>
-
-  <p>Reviews for this car</p>
-  <ul>
-    <% @car.reviews.each do |review| %>
-
-      <li><h2><%= review.content %> Rating: <%= review.rating %></h2></li>
-
-    <% end %>
-  </ul>
-
-  <p><%= link_to "Add a review", new_car_review_path(@car) %></p>
 </div>
+
+  <div class="middle-container">
+    <div>
+      <p><%= @car.brand %></p>
+      <p><%= @car.model %></p>
+      <p><%= @car.year %></p>
+      <p><%= @car.address %></p>
+    </div>
+    <div class="description-container">
+      <%= @car.description %>
+    </div>
+  </div>
+
+  <div class="bottom-container">
+    <p><%= link_to "Add a review", new_car_review_path(@car) %></p>
+  </div>
+
+</div>
+
+
+  <div class="container container-bottom">
+    <h2>Reviews & Comments</h2>
+      <% @car.reviews.each do |review| %>
+        <div class="review-container">
+          <div class="review-rating">
+            <%= review.rating %>
+          </div>
+          <div class="review-content">
+            "<%= review.content %>"
+          </div>
+        </div>
+      <% end %>
+  </div>
+
+
