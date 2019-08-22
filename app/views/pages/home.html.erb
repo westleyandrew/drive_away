@@ -20,10 +20,12 @@
     <section class="heading">
       <center> Quickest Booking.<br>
             Longest Range. The Safest Cars</center>
-        <div class="search">
-          <button>Search</button>
-          <input id="flat_address" type="search" name="">
-        </div>
+          <form action="<%= cars_path %>" method="get">
+            <div class="search">
+              <button>Search</button>
+              <input id="flat_address" name="search">
+            </div>
+          </form>
     </section>
 
     <div class="section-footer">
