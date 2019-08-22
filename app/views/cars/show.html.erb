@@ -20,7 +20,29 @@
   <% end %>
 
   <p><%= link_to "Book this car", new_car_booking_path(@car) %></p>
-  <h1>Need to add a list of bookings here!!!!!</h1>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 offset-sm-2">
+          <% if !@bookings.nil? %>
+            <%= month_calendar events: [@bookings] do |date, bookings| %>
+              <%= date.to_formatted_s(:short) %>
+
+              <% bookings.each do |bookings| %>
+                <div>
+                  <%= @car.title %>
+                </div>
+              <% end %>
+            <% end %>
+           <% else %>
+             <%= month_calendar do |date| %>
+             <%= date.to_formatted_s(:short) %>
+        <% end %>
+     <% end %>
+      </div>
+    </div>
+  </div>
+
   <p><%= link_to "Back to car list", cars_path %></p>
 
   <p>Reviews for this car</p>
