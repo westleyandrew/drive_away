@@ -1,33 +1,4 @@
-<div class="addstyle">
-  <ul class="fontf">
-    <li class="title-color"><h1><%= @car.title %></h1></li>
-    <li><h3><%= @car.brand %><h3></li>
-    <li><h3><%= @car.model %><h3></li>
-    <li><%= @car.year %></li>
-    <li><%= @car.price %></li>
-    <li><%= @car.description %></li>
-    <li><%= cl_image_tag @car.photo, height: 300, width: 400, crop: :fill %></li>
-    <li><%= @car.address %></li>
-  </ul>
 
-  <% if policy(@car).edit? %>
-  <p><%= link_to "Edit your car", edit_car_path %></p>
-  <% end %>
-  <% if policy(@car).destroy? %>
-  <p><%= link_to "Delete car", car_path(@car),
-    method: :delete,
-    data: { confirm: "Are you sure?" } %></p>
-  <% end %>
-
-  <p><%= link_to "Book this car", new_car_booking_path(@car) %></p>
-  <h1>Need to add a list of bookings here!!!!!</h1>
-  <p><%= link_to "Back to car list", cars_path %></p>
-
-  <p>Reviews for this car</p>
-  <ul class="reviews-list">
-    <% @car.reviews.each do |review| %>
-
-      <li><h2><%= review.content %> Rating: <%= review.rating %></h2></li>
 
 <div class="container">
 <div class="car-container-top">
@@ -76,24 +47,8 @@
     </div>
   </div>
 </div>
-    
-<div class="container">
-  <div class="row">
-    <div class="col-sm-4 offset-sm-4">
 
-      <h1>Add a review</h1>
 
-      <%= simple_form_for [@car, @review], remote: true do |f| %>
-        <%= f.input :content %>
-        <%= f.input :rating, as: :integer %>
-        <%= f.submit "Add a review" %>
-      <% end %>
-
-      <p><%= link_to @car.title, car_path(@car) %></p>
-
-    </div>
-  </div>
-</div>
 
   <div class="middle-container">
     <div>
@@ -117,7 +72,7 @@
   <div class="container container-bottom">
     <h2 class ="h1_text_pages">Reviews & Comments</h2>
       <% @car.reviews.each do |review| %>
-        <div class="review-container">
+        <div class="review-container reviews-list">
           <div class="review-rating">
             <%= review.rating %>
           </div>
@@ -128,3 +83,20 @@
       <% end %>
   </div>
 
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 offset-sm-4 h1_text_pages">
+
+      <h1>Add a review</h1>
+
+      <%= simple_form_for [@car, @review], remote: true do |f| %>
+        <%= f.input :content %>
+        <p>Rating</p>
+        <%= f.select :rating, [['Fabulous', 5],['Pretty neat', 4],['Definition of average', 3],['Poor (sad face)', 2],['Appalling',1,]] %>
+        <p></p>
+        <%= f.submit "Leave your review" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
