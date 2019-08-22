@@ -6,8 +6,10 @@
 
       <%= simple_form_for [@car, @review] do |f| %>
         <%= f.input :content %>
-        <%= f.input :rating, as: :integer %>
-        <%= f.submit "Add a review" %>
+        <p>Rating</p>
+        <%= f.select :rating, [['Fabulous', 5],['Pretty neat', 4],['Definition of average', 3],['Poor (sad face)', 2],['Appalling',1,]] %>
+        <p></p>
+        <%= f.submit "Leave your review" %>
       <% end %>
 
     </div>
