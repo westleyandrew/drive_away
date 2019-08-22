@@ -9,4 +9,19 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+  margin-left: 20px;
+}
+
+.add-car {
+  list-decoration: none;
+}
+
+.add-car a {
+  color: rgba(0,0,0,0.5);
+  margin: 0 5px;
+  text-decoration: none;
+}
+
+.add-car a:hover {
+  color: rgba(0,0,0,0.8)
 }
