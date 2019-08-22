@@ -5,8 +5,8 @@
       <div class="col-sm-3">
         <h2><%= link_to booking.car.title, booking_path(booking) %></h2>
         <h2><%= booking.user.email %></h2>
-        <h2><%= booking.booking_start_date %></h2>
-        <h2><%= booking.booking_end_date %></h2>
+        <h2><%= booking.start_time %></h2>
+        <h2><%= booking.end_time %></h2>
       </div>
     <% end %>
   </div>

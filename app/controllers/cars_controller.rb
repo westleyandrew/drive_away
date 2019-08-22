@@ -18,6 +18,7 @@ class CarsController < ApplicationController
   end
 
   def show
+    @bookings = Booking.find_by(:car_id == params[:id])
     authorize @car
     @review = Review.new
   end
@@ -57,7 +58,7 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:title, :brand, :model, :year, :price, :description, :available, :photo, :address, :user_id)
+    params.require(:car).permit(:title, :brand, :model, :year, :price, :description, :photo, :address, :user_id)
   end
 
   def set_car
