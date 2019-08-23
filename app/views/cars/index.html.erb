@@ -1,26 +1,29 @@
-<div class= "my-css">
-  <div class="row my-row">
-    <% @cars.each do |car| %>
-      <div class="col-md-12">
-          <div class="card-product cards">
+<div>
+  <div class= "page-grid">
+    <div class="card-grid">
+      <% @cars.each do |car| %>
+        <div class="cards">
+          <figure>
             <img class="card-image" src="<%= car.photo %>" alt="">
-              <div class="card-product-infos cards">
-                <h5><%= link_to car.title, car_path(car) %></h5>
-                <%= car.brand %>
-                <%= car.model %>
-              <div>Address: <%= car.address%></div>
-            <div>Price per day: £<%= car.price %></div>
+          </figure>
+                <div class="card-product-infos">
+                  <h5 class="title-index"><%= link_to car.title, car_path(car) %></h5>
+                  <%= car.brand %>
+                  <%= car.model %>
+                <div>Address: <%= car.address%></div>
+              <div>Price per day: £<%= car.price %></div>
           </div>
         </div>
-      </div>
-    <% end %>
-  </div>
-
-  <div class="row my-row">
-    <div
-    id="map"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      <% end %>
     </div>
+    <div class="map-holder">
+      <div class="mapouter">
+          <div
+          id="map"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
+        <div>
+      </div>
   </div>
 </div>
