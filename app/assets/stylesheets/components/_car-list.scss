@@ -8,10 +8,18 @@
 }
 
 .middle-container {
+  // display: flex;
+  // justify-content: space-between;
+  // padding: 27px 0;
+  // position: relative;
   display: flex;
-  justify-content: space-between;
-  padding: 27px 0;
-  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
 }
 
 .description-container {
