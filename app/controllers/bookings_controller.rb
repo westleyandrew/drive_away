@@ -24,7 +24,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to car_path(@car)
     else
-      render :new
+      redirect_back(fallback_location: car_path(@car))
     end
     authorize @booking
   end
