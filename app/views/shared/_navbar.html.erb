@@ -17,7 +17,15 @@
         <div class="nav-link add-car">
           <%= link_to new_car_path do %>
             <i class="fas fa-car"></i>
-            <%= "Lend car" %>
+            <%= "Become a lender" %>
+          <% end %>
+        </div>
+      <% end %>
+        <li class="nav-item">
+        <% if policy(Car).new? %>
+        <div class="nav-link add-car">
+          <%= link_to cars_path do %>
+            <%= "Help " %>
           <% end %>
         </div>
       <% end %>

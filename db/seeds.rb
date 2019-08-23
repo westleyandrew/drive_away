@@ -54,7 +54,7 @@ car2.save
 car2_id = car2.id
 
 url = "https://pictures.dealer.com/b/boardwalkferrari/0390/eda171ddf38db2597efffa0bcdb6c57ax.jpg"
-car3 = Car.new(title: "Poerful Ferrari",
+car3 = Car.new(title: "Powerful Ferrari",
            brand: "Ferrari",
            model: "F11",
            year: 2018,

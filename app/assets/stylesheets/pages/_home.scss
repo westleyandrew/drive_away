@@ -148,6 +148,21 @@ div.section-footer,div.section-footer a
   text-align: center;
 }
 
+
+.links_text_pages_index a {
+  color: $driveaway;
+  font-family: "Open Sans", "Helvetica", "sans-serif";
+  text-align: left;
+}
+
+.links_text_pages_index a:hover {
+  color: $driveaway;
+  font-family: "Open Sans", "Helvetica", "sans-serif";
+  text-align: left;
+  text-decoration: none;
+  opacity: 0.5;
+}
+
 .links_text_pages a:hover {
   color: $driveaway;
   font-family: "Open Sans", "Helvetica", "sans-serif";
@@ -160,4 +175,8 @@ div.section-footer,div.section-footer a
   text-align: left;
   color: $driveaway;
   font-family: "Open Sans", "Helvetica", "sans-serif";
+}
+
+.calendar-heading a {
+  color: $driveaway;
 }
