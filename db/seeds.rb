@@ -167,7 +167,7 @@ car10 = Car.new(title: "Very spacious wagon bus",
            price: 50.00,
            description: "Wonderful to drive. In perfect condition",
            available: true,
-           address: "Le Wagon, ",
+           address: "Old Kent Road, London",
            user: User.third
            )
 car10.remote_photo_url = url
