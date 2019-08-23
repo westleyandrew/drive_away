@@ -30,7 +30,9 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <span><p>Current time: <%= Time.current.to_formatted_s(:time) %>
+            <%=Date.today.strftime("%a, %e %b %Y") %></span></p>
+            <span><h5 class="modal-title" id="exampleModalLabel">Booking Table</h5></span>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -80,10 +82,6 @@
   <div class="middle-container">
     <div>
       <h4><%= @car.brand %> - <%= @car.model %>, <%= @car.year %></h4>
-      <p class="links_text_pages_p"><%= @car.brand %></p>
-      <p class="links_text_pages_p"><%= @car.model %></p>
-      <p class="links_text_pages_p"><%= @car.year %></p>
-      <p class="links_text_pages_p"><%= @car.address %></p>
     </div>
       <hr>
     <div class="description-container">
@@ -93,9 +91,6 @@
   </div>
     <hr>
   <div class="bottom-container">
-    Time & Day: <%= Time.current.to_formatted_s(:time) %>
-    <%=Date.today.strftime("%a, %e %b %Y") %>
-    <p><%= link_to "Add a review", new_car_review_path(@car), class: "links_text_pages" %></p>
   </div>
 
 </div>
@@ -106,7 +101,7 @@
       <% @car.reviews.each do |review| %>
         <div class="review-container reviews-list">
           <div class="review-rating">
-            <%= review.rating %>
+            '<%= review.rating %>'
           </div>
           <div class="review-content">
             "<%= review.content %>"

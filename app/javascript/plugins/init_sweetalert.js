@@ -1,15 +1,15 @@
-// import swal from 'sweetalert';
+import swal from 'sweetalert';
 
-// const initSweetalert = (selector, options = {}) => {
-//   const form = document.querySelector("#new_booking");
+const initSweetalert = (selector, options = {}, callback) => {
+  const form = document.querySelector("#new_booking");
 
-//   if (form) { // protect other pages
-//     form.addEventListener('submit', () => {
-//       // event.preventDefault();
-//       // $('#exampleModal').modal('hide');
-//       // swal(options)
-//     });
-//   }
-// };
+  if (form) { // protect other pages
+    form.addEventListener('submit', () => {
+      event.preventDefault();
+      $('#exampleModal').modal('hide');
+      swal(options).then(callback);
+    });
+  }
+};
 
-// export { initSweetalert };
+export { initSweetalert };
