@@ -18,7 +18,39 @@
     <p class="links_text_pages_p"><%= @car.address %></p>
   </div>
   <div class="car-container-booking">
-    <%= link_to "Book this car", new_car_booking_path(@car),class: "purple-button" %>
+    <%#= link_to "Book this car", new_car_booking_path(@car),class: "purple-button" %>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="purple-button" data-toggle="modal" style="width: 200px;" data-target="#exampleModal">
+      Book this car
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+<!--             <p class="text-time">Current time: <%= Time.current.to_formatted_s(:time) %>
+            <%=Date.today.strftime("%a, %e %b %Y") %></p> -->
+            <div>
+              <h5 class="modal-title" id="exampleModalLabel">Booking Table</h5>
+            </div>
+            <div>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+          <div class="modal-body">
+            <%= render "bookings/new", car: @car, booking: Booking.new %>
+          </div>
+          <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div> -->
+        </div>
+      </div>
+    </div>
     <p></p>
     <h2><%= @car.price %> £ / day</h2>
 
@@ -62,10 +94,6 @@
   <div class="middle-container">
     <div>
       <h4><%= @car.brand %> - <%= @car.model %>, <%= @car.year %></h4>
-      <p class="links_text_pages_p"><%= @car.brand %></p>
-      <p class="links_text_pages_p"><%= @car.model %></p>
-      <p class="links_text_pages_p"><%= @car.year %></p>
-      <p class="links_text_pages_p"><%= @car.address %></p>
     </div>
       <hr>
     <div class="description-container">
@@ -75,8 +103,6 @@
   </div>
     <hr>
   <div class="bottom-container">
-    Time & Day: <%= Time.current.to_formatted_s(:time) %>
-    <%=Date.today.strftime("%a, %e %b %Y") %>
   </div>
 
 </div>
@@ -87,7 +113,7 @@
       <% @car.reviews.each do |review| %>
         <div class="review-container">
           <div class="review-rating">
-            <%= review.rating %>
+            '<%= review.rating %>'
           </div>
           <div class="review-content">
             "<%= review.content %>"

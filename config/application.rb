@@ -14,6 +14,7 @@ module DriveAway
           generate.test_framework  :test_unit, fixture: false
         end
     # Initialize configuration defaults for originally generated Rails version.
+    config.action_view.embed_authenticity_token_in_remote_forms = true
     config.load_defaults 5.2
     config.assets.paths << "#{Rails.root}/app/assets/videos"
     config.action_view.embed_authenticity_token_in_remote_forms = true
