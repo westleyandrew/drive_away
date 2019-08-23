@@ -1,14 +1,16 @@
+
+
 <div class="container">
 <div class="car-container-top">
   <div>
-    <p><%= link_to "< Back to car list", cars_path %></p>
-    <h2 class="text-inline"><%= @car.title %></h2>
+    <%= link_to "< Back to car list", cars_path,class: "links_text_pages" %></p>
+    <h2 class="text-inline h1_text_pages"><%= @car.title %></h2>
     <span><%= @car.average_rating %></span>⭐
     <p><% if policy(@car).edit? %>
-    <%= link_to "Edit", edit_car_path %>
+    <%= link_to "Edit", edit_car_path, class: "links_text_pages" %>
     <% end %>
     <% if policy(@car).destroy? %> |
-    <%= link_to "Delete", car_path(@car),
+    <%= link_to "Delete", car_path(@car), class: "links_text_pages",
       method: :delete,
       data: { confirm: "Are you sure?" } %>
     <% end %></p>
@@ -16,7 +18,8 @@
     <p><%= @car.address %></p>
   </div>
   <div class="car-container-booking">
-    <%= link_to "Book this car", new_car_booking_path(@car),class: "btn btn-gradient" %>
+    <%= link_to "Book this car", new_car_booking_path(@car),class: "purple-button" %>
+    <p></p>
     <h2><%= @car.price %> £ / day</h2>
 
     <div class="container">
@@ -29,7 +32,7 @@
 
               <% bookings.each do |bookings| %>
                 <div>
-                  <%= @car.title %>
+                  <% @car.title %>
                 </div>
               <% end %>
             <% end %>
@@ -46,9 +49,15 @@
   </div>
 </div>
 
+
+
   <div class="middle-container">
     <div>
       <h4><%= @car.brand %> - <%= @car.model %>, <%= @car.year %></h4>
+      <p class="links_text_pages_p"><%= @car.brand %></p>
+      <p class="links_text_pages_p"><%= @car.model %></p>
+      <p class="links_text_pages_p"><%= @car.year %></p>
+      <p class="links_text_pages_p"><%= @car.address %></p>
     </div>
       <hr>
     <div class="description-container">
@@ -60,16 +69,16 @@
   <div class="bottom-container">
     Time & Day: <%= Time.current.to_formatted_s(:time) %>
     <%=Date.today.strftime("%a, %e %b %Y") %>
-    <p><%= link_to "Add a review", new_car_review_path(@car) %></p>
+    <p><%= link_to "Add a review", new_car_review_path(@car), class: "links_text_pages" %></p>
   </div>
 
 </div>
 
 
   <div class="container container-bottom">
-    <h2>Reviews & Comments</h2>
+    <h2 class ="h1_text_pages">Reviews & Comments</h2>
       <% @car.reviews.each do |review| %>
-        <div class="review-container">
+        <div class="review-container reviews-list">
           <div class="review-rating">
             <%= review.rating %>
           </div>
@@ -80,4 +89,20 @@
       <% end %>
   </div>
 
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 offset-sm-4 h1_text_pages">
 
+      <h1>Add a review</h1>
+
+      <%= simple_form_for [@car, @review], remote: true do |f| %>
+        <%= f.input :content %>
+        <p>Rating</p>
+        <%= f.select :rating, [['Fabulous', 5],['Pretty neat', 4],['Definition of average', 3],['Poor (sad face)', 2],['Appalling',1,]] %>
+        <p></p>
+        <%= f.submit "Leave your review" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
