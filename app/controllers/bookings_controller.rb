@@ -21,11 +21,7 @@ class BookingsController < ApplicationController
     @car = Car.find(params[:car_id])
     @booking.car = @car
     @booking.user = current_user
-    if @booking.save
-      redirect_to car_path(@car)
-    else
-      render :new
-    end
+    @booking.save
     authorize @booking
   end
 

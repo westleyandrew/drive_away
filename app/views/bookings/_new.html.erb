@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-4 offset-sm-4">
-      <%= simple_form_for [@car, @booking] do |f| %>
+      <%= simple_form_for([car, booking], remote: true) do |f| %>
         <%= f.input :start_time, as: :string, required: false, input_html: {class: "datepicker"} %>
         <%= f.input :end_time, as: :string, required: false, input_html: {class: "datepicker"} %>
         <%= f.button :submit %>

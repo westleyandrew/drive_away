@@ -5,4 +5,13 @@ import "../plugins/flatpickr"
 import { initMapbox } from '../plugins/init_mapbox';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
+// import { initSweetalert } from '../plugins/init_sweetalert';
+
+
 initMapbox();
+
+// initSweetalert('#sweet-alert-demo', {
+//   title: "A nice alert",
+//   text: "This is a great alert, isn't it?",
+//   icon: "success"
+// });
