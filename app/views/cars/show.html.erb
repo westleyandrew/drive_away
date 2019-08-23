@@ -15,7 +15,7 @@
       data: { confirm: "Are you sure?" } %>
     <% end %></p>
     <%= cl_image_tag @car.photo, height: 500, width: 550, crop: :fill %>
-    <p><%= @car.address %></p>
+    <p class="links_text_pages_p"><%= @car.address %></p>
   </div>
   <div class="car-container-booking">
     <%= link_to "Book this car", new_car_booking_path(@car),class: "purple-button" %>
