@@ -5,7 +5,7 @@
   <div>
     <%= link_to "< Back to car list", cars_path,class: "links_text_pages" %></p>
     <h2 class="text-inline h1_text_pages"><%= @car.title %></h2>
-    <span><%= @car.average_rating %></span>
+    <span><%= @car.average_rating %></span>⭐
     <p><% if policy(@car).edit? %>
     <%= link_to "Edit", edit_car_path, class: "links_text_pages" %>
     <% end %>
@@ -15,6 +15,7 @@
       data: { confirm: "Are you sure?" } %>
     <% end %></p>
     <%= cl_image_tag @car.photo, height: 500, width: 550, crop: :fill %>
+    <p><%= @car.address %></p>
   </div>
   <div class="car-container-booking">
     <%= link_to "Book this car", new_car_booking_path(@car),class: "purple-button" %>
@@ -52,17 +53,22 @@
 
   <div class="middle-container">
     <div>
+      <h4><%= @car.brand %> - <%= @car.model %>, <%= @car.year %></h4>
       <p class="links_text_pages_p"><%= @car.brand %></p>
       <p class="links_text_pages_p"><%= @car.model %></p>
       <p class="links_text_pages_p"><%= @car.year %></p>
       <p class="links_text_pages_p"><%= @car.address %></p>
     </div>
+      <hr>
     <div class="description-container">
-      <%= @car.description %>
+      <h4>Description</h4>
+      <p><%= @car.description %></p>
     </div>
   </div>
-
+    <hr>
   <div class="bottom-container">
+    Time & Day: <%= Time.current.to_formatted_s(:time) %>
+    <%=Date.today.strftime("%a, %e %b %Y") %>
     <p><%= link_to "Add a review", new_car_review_path(@car), class: "links_text_pages" %></p>
   </div>
 
