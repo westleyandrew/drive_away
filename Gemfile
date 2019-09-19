@@ -23,6 +23,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem "simple_calendar", "~> 2.0"
 gem 'pg_search'
+gem 'money-rails'
 
 
 group :development do
